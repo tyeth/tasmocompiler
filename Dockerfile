@@ -5,13 +5,13 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y python3 
   DEBIAN_FRONTEND=noninteractive apt-get install -y python3-pip && pip3 install platformio && \
   DEBIAN_FRONTEND=noninteractive apt-get clean && \
   yarn global add nodemon && \
-  cd /tmp && git clone https://github.com/arendst/Tasmota.git && \
+  cd /tmp && git clone https://github.com/tyeth/Tasmota.git && \
   rm -rf /var/lib/apt/lists/* 
 ADD public /tasmocompiler/public/
 ADD server /tasmocompiler/server/
 ADD src /tasmocompiler/src/
 ADD package.json yarn.lock .yarnrc /tasmocompiler/
-RUN cd /tasmocompiler && yarn install && \
+RUN cd /tasmocompiler && git checkout add-sen5x && yarn install && \
   yarn build && \
   yarn cache clean
 ENV LC_ALL=C.UTF-8 LANG=C.UTF-8
