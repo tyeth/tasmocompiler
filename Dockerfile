@@ -11,7 +11,7 @@ ADD public /tasmocompiler/public/
 ADD server /tasmocompiler/server/
 ADD src /tasmocompiler/src/
 ADD package.json yarn.lock .yarnrc /tasmocompiler/
-RUN cd /tasmocompiler && git checkout add-sen5x && yarn install && \
+RUN cd /tasmocompiler && git checkout add-sen5x && git branch -d development && git checkout -b development && yarn install && \
   yarn build && \
   yarn cache clean
 ENV LC_ALL=C.UTF-8 LANG=C.UTF-8
