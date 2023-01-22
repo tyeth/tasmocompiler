@@ -6,7 +6,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y python3 
   DEBIAN_FRONTEND=noninteractive apt-get clean && \
   yarn global add nodemon && \
   cd /tmp && git clone https://github.com/tyeth/Tasmota.git && cd /tmp/Tasmota && git checkout add-sen5x && \
-  git branch -d development && git checkout -b development && git tag "v12.3.2" && git tag "development" && cd /tmp && \
+  git branch -d development && git checkout -b development && git tag v12.3.2 && cd /tmp && \
   rm -rf /var/lib/apt/lists/* 
 ADD public /tasmocompiler/public/
 ADD server /tasmocompiler/server/
