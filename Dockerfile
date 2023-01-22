@@ -14,6 +14,7 @@ ADD package.json yarn.lock .yarnrc /tasmocompiler/
 RUN cd /tasmocompiler && git checkout add-sen5x && git branch -d development && git checkout -b development && yarn install && \
   yarn build && \
   yarn cache clean
+  set PATH=/home/gitpod/.local/bin:$PATH
 ENV LC_ALL=C.UTF-8 LANG=C.UTF-8
 WORKDIR /tasmocompiler
 ENTRYPOINT ["nodemon", "server/app.js"]
