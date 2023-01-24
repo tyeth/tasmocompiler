@@ -2,7 +2,7 @@ image:
   file: .gitpod.Dockerfile
 tasks:
   - init: yarn install
-    command: yarn build && pip3 install platformio && PATH=$PATH:$HOME/.local/bin && node server/app.js
+    command: yarn build && pip3 install platformio && PATH=$PATH:$HOME/.local/bin && cd /tmp && git clone https://github.com/tyeth/Tasmota.git && cd /tmp/Tasmota && git checkout add-sen5x && git branch -d development && git checkout -b development && git tag v12.3.2 && cd /workspace/tasmocompiler && node server/app.js
 ports:
   - port: 3000
     onOpen: open-browser
