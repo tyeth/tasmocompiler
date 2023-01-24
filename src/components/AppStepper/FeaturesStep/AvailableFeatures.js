@@ -83,7 +83,18 @@ const availableFeatures = [
       '#define MTX_ADDRESS5     0x73              // [DisplayAddress5] I2C address of fifth 8x8 matrix module\n' +
       '#define MTX_ADDRESS6     0x76              // [DisplayAddress6] I2C address of sixth 8x8 matrix module\n' +
       '#define MTX_ADDRESS7     0x00              // [DisplayAddress7] I2C address of seventh 8x8 matrix module\n' +
-      '#define MTX_ADDRESS8     0x00              // [DisplayAddress8] I2C address of eigth 8x8 matrix module\n',
+      '#define MTX_ADDRESS8     0x00              // [DisplayAddress8] I2C address of eigth 8x8 matrix module\n' +
+      '\n' +
+      '#ifndef USE_DISPLAY' +
+      '#define USE_DISPLAY' +
+      '#define USE_DISPLAY_ST7789' +
+      '#define USE_UNIVERSAL_DISPLAY' +
+      '#endif' +
+      '//' +
+      '#ifndef USE_LVGL' +
+      '#define USE_LVGL' +
+      '#define USE_LVGL_OPENHASP' +
+      '#endif\n',
     boards: [
       'esp8266generic',
       'esp82664M',
