@@ -2,10 +2,10 @@ const path = require('path');
 
 const WORKDIR = process.env.WORKDIR || '/tmp';
 const tasmotaRepo = path.resolve(WORKDIR, 'Tasmota');
-const githubRepo = 'https://github.com/arendst/Tasmota.git';
+const githubRepo = 'https://github.com/tyeth/Tasmota.git';
 const minVersion = 'v12.3.0';
 const maxVersion = 'v12.3.99';
-const edgeBranch = 'development';
+const edgeBranch = 'fix-sen5x';
 const userConfigOvewrite = path.resolve(tasmotaRepo, 'tasmota/user_config_override.h');
 const userPlatformioOverrideIni = path.resolve(tasmotaRepo, 'platformio_override.ini');
 const tasmotaVersionFile = path.resolve(tasmotaRepo, 'tasmota/tasmota_version.h');
